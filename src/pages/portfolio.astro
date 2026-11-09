@@ -1,0 +1,148 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Portfolio - MR.">
+  <div class="portfolio-container">
+    
+    <h1 class="page-title">
+      <span class="portfolio-word">Portfolio</span> <span class="dot-word">.</span>
+    </h1>
+
+    <div class="projects-grid">
+      
+      <a href="/projects/duomo" class="project-card">
+        <img src="/images/duomomilano.jpg" alt="Duomo" class="project-img" />
+        <div class="project-card-overlay">
+          <h3 class="project-title-text">Duomo</h3>
+          <span class="project-year">2021</span>
+        </div>
+      </a>
+
+      <a href="/projects/obelix" class="project-card">
+        <img src="/images/obelix/DSCF8416.jpg" alt="Obelix" class="project-img" />
+        <div class="project-card-overlay">
+          <h3 class="project-title-text">Obelix</h3>
+          <span class="project-year">2021</span>
+        </div>
+      </a>
+
+      <a href="/projects/carega1" class="project-card">
+        <img src="/images/carega1/DSCF8410.jpg" alt="Carega #1" class="project-img" />
+        <div class="project-card-overlay">
+          <h3 class="project-title-text">Carega #1</h3>
+          <span class="project-year">2022</span>
+        </div>
+      </a>
+
+      <a href="/projects/hop" class="project-card">
+        <img src="/images/hop/DSCF8403.jpg" alt="Hop" class="project-img" />
+        <div class="project-card-overlay">
+          <h3 class="project-title-text">Hop</h3>
+          <span class="project-year">2022</span>
+        </div>
+      </a>
+
+    </div>
+
+  </div>
+</BaseLayout>
+
+<style>
+  .portfolio-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 50px 20px 80px 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .page-title {
+    font-size: 3rem;
+    font-weight: 700;
+    margin: 0 0 40px 0;
+    text-align: center;
+    width: 100%;
+    color: var(--color-primary);
+  }
+
+  .portfolio-word { color: var(--color-primary); }
+  .dot-word { color: var(--color-accent); }
+
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 35px;
+    width: 100%;
+  }
+
+  .project-card {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    height: 300px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+    text-decoration: none;
+    display: block;
+    background-color: var(--color-secondary);
+    transition: transform 0.3s ease;
+  }
+
+  .project-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+  }
+
+  .project-card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(45, 66, 56, 0.88);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.35s ease;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+
+  .project-title-text {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--color-bg);
+    margin: 0 0 10px 0;
+    transform: translateY(12px);
+    transition: transform 0.35s ease;
+  }
+
+  .project-year {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--color-accent);
+    transform: translateY(12px);
+    transition: transform 0.35s ease 0.05s;
+  }
+
+  .project-card:hover .project-card-overlay {
+    opacity: 1;
+  }
+
+  .project-card:hover .project-img {
+    transform: scale(1.06);
+  }
+
+  .project-card:hover .project-title-text,
+  .project-card:hover .project-year {
+    transform: translateY(0);
+  }
+</style>

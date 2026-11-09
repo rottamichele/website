@@ -1,0 +1,149 @@
+---
+const { title } = Astro.props;
+---
+<html lang="it">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  </head>
+  <body>
+
+    <!-- Header Fisso -->
+    <header class="fixed-header">
+      <div class="header-left">
+        <div class="logo">
+          <a href="/">MR.</a>
+        </div>
+        <nav class="nav">
+          <a href="/portfolio">Portfolio</a>
+          <a href="/cv">CV</a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Contenuto principale -->
+    <main class="page-container">
+      <slot />
+    </main>
+
+    <!-- Piè di pagina standard -->
+    <footer class="site-footer">
+      <p>&copy; 2026 - MR.</p>
+    </footer>
+
+  </body>
+</html>
+
+<style is:global>
+  /* --- VARIABILI GLOBALI CON IL VIOLA COME COLORE PRINCIPALE (Palette #127) --- */
+  :root {
+    --color-bg: #fcf6ef;          /* Sfondo generale caldo neutro */
+    --color-text: #4a3b32;        /* Testo principale */
+    --color-primary: #66629c;     /* Dark Soft Violet (Colore principale per titoli e brand) */
+    --color-secondary: #648f7b;  /* Cinnamon Buff (Sfondi card / accenti caldi) */
+    --color-accent: #fdc57e;      /* Pistachio Green (Dettagli secondari e punti) */
+    --color-card-dark: #2d3242;   /* Sfondo scuro per overlay */
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    color: var(--color-text);
+    background-color: var(--color-bg);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto !important;
+    overflow-x: hidden;
+  }
+
+  .fixed-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 82px;
+    background-color: rgba(252, 246, 239, 0.9);
+    backdrop-filter: blur(8px);
+    z-index: 999;
+    padding: 20px 40px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid rgba(102, 98, 156, 0.2);
+  }
+
+  .header-left {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    width: 100%;
+  }
+
+  .logo {
+    width: 42px;
+    height: 42px;
+    background-color: var(--color-primary); /* Diventa viola */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s ease;
+  }
+
+  .logo:hover {
+    background-color: var(--color-accent);
+  }
+
+  .logo a {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #fcf6ef;
+    text-decoration: none;
+    letter-spacing: 0.5px;
+  }
+
+  .nav {
+    display: flex;
+    gap: 20px;
+  }
+
+  .nav a {
+    color: var(--color-text);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.9rem;
+    transition: color 0.2s ease;
+  }
+
+  .nav a:hover {
+    color: var(--color-primary);
+  }
+
+  .page-container {
+    flex: 1;
+    width: 100%;
+    min-height: calc(100vh - 82px);
+    padding-top: 82px;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+  }
+
+  .site-footer {
+    width: 100%;
+    padding: 25px 60px;
+    font-size: 0.85rem;
+    color: var(--color-primary);
+    border-top: 1px solid rgba(102, 98, 156, 0.2);
+    box-sizing: border-box;
+    background-color: var(--color-bg);
+    text-align: left;
+  }
+</style>

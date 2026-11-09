@@ -1,11 +1,104 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
-<Layout>
-	<Welcome />
-</Layout>
+<BaseLayout title="Work - Portfolio">
+  <div class="content-box">
+    <div class="intro">
+      <h1 class="title">
+        <span class="MR-word">MR</span> <span class="dot-word">.</span>
+      </h1>
+      <p>
+        I'm Michele Rotta, I'm an Engineer and in this space I share something.<br/>
+        I was born in the mid-1990s, halfway between the city of Verona and Lake Garda, halfway between the mountains and the plains. From the "middle-earth", you might say.
+        <br/><br/>
+        I like to make my own way through things, where there is no pre-written story and off the beaten track.
+        Curiosity and creativity led me to explore, trying to understand how things are made and how they work. To answer these questions I began studying technical stuff adding more complexity along the way. I like being able to move between all these subjects and fields because it gives me different points of view so I don't get stuck.
+        I realized that my strength lies in versatility and creating integration.
+      </p>
+    </div>
+
+    <!-- Contenitore per le immagini incolonnate -->
+    <div class="images-column">
+      <div class="image-container">
+        <img src="/images/IMG_7434.jpg" alt="Foto 1" />
+      </div>
+      <div class="image-container">
+        <img src="/images/IMG_8423.jpg" alt="Foto 2" />
+      </div>
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+  .content-box {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 60px;
+    padding: 40px 20px;
+    box-sizing: border-box;
+  }
+
+  .title {
+    font-size: 3rem;
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-weight: 700;
+  }
+
+  .MR-word {
+    color: var(--color-primary); 
+  }
+
+  .dot-word {
+    color: var(--color-accent); 
+  }
+
+  .intro {
+    max-width: 500px;
+  }
+
+  .intro p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--color-text);
+    margin: 0;
+  }
+
+  .images-column {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    max-width: 500px; 
+    width: 100%;
+  }
+
+  .image-container {
+    width: 300px;
+    height: 220px;
+  }
+
+  .image-container img {
+    width: 80%;
+    height: 80%;
+    border-radius: 8px;
+    object-fit: cover;
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.05);
+  }
+
+  @media (max-width: 768px) {
+    .content-box {
+      flex-direction: column;
+      gap: 30px;
+    }
+    .intro, .images-column, .image-container {
+      max-width: 100%;
+      width: 100%;
+    }
+  }
+</style>
