@@ -16,60 +16,77 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     <!-- Canvas con forme geometriche -->
     <div class="shapes-canvas">
 
-      <!-- 1. Working Experiences (Cerchio) -> Viola Soft (#66629c) -->
+      <!-- 1. Working Experiences (Cerchio) -->
       <div class="geom-shape shape-circle" tabindex="0">
         <button class="close-btn" aria-label="Chiudi">&times;</button>
         <div class="shape-inner">
-          <h2 class="shape-title">Working Experiences</h2>
+          <h2 class="shape-title"><span class="highlight-letter">W</span>orking <span class="highlight-letter">E</span>xperiences</h2>
           <div class="shape-content">
             <div class="cv-item">
-              <h3>Engineer / Technical Role</h3>
-              <span class="cv-company">Company Name — 2024 - Present</span>
-              <p>Gestione di progetti complessi, sviluppo tecnico e integrazione multidisciplinare.</p>
+              <h3><span class="highlight-word">Mechanical</span> Designer</h3>
+              <span class="cv-company"><span class="highlight-letter">@ SACMI | 2023 - Now</span></span>
+              <p>In engineering department I design press for ceramic casting. 
+                The journey include mechanical calculations, 3D/2D modelling, FEM analysis, 
+                hydraulic and pneumatic systems design. In these processes I work in a 
+                multidisciplinary team (mechanical, electrical and automation), 
+                interacting with the purchasing department, suppliers and the workshop staff. 
+                This implies to work with cost estimations, quotations, project management and people 
+                coordination.</p>
             </div>
             <div class="cv-item">
-              <h3>Previous Experience</h3>
-              <span class="cv-company">Previous Company — 2021 - 2024</span>
-              <p>Attività di analisi, ottimizzazione dei processi e ricerca di soluzioni innovative.</p>
+              <h3>Junior Control <span class="highlight-word">Software</span> Engineer</h3>
+              <span class="cv-company"><span class="highlight-letter">@ Eldor Corporation | 2020 - 2022</span></span>
+              <p>In R&D department I used to develop software control algorithms for static converter 
+                (Power Electronics) for automotive industry (onboard battery charger). 
+                I worked with hardware and mechanical departments in developing and testing 
+                prototypes of different kind of converters (PFC, DC-DC, Buck-Boost, etc.). 
+                I’ve been involved in safety analysis, thermal models, laboratory and endurance tests.</p>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- 2. Education (Rettangolo arrotondato) -> Toni del rosso/terracotta (#d97a66) -->
+      <!-- 2. Education (Cerchio) -->
       <div class="geom-shape shape-rect" tabindex="0">
         <button class="close-btn" aria-label="Chiudi">&times;</button>
         <div class="shape-inner">
           <h2 class="shape-title">Education</h2>
           <div class="shape-content">
             <div class="cv-item">
-              <h3>Master Degree in Engineering</h3>
-              <span class="cv-company">University Name — 2015 - 2020</span>
-              <p>Percorso accademico focalizzato su materie tecniche, tesi sperimentale e approccio analitico.</p>
+              <h3>M.Ss Automation and Control Engineer</h3>
+              <span class="cv-company">@ Politecnico di Milano | 2017 - 2020</span></div>
+            
+              <div class="cv-item">  
+              <h3>B.Sc Mechatronic Engineer</h3>
+              <span class="cv-company">@ Università degli Studi di Padova | 2014 - 2017</span></div></div>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- 3. Languages (Rombo) -> Cinnamon Buff (#fdc57e) -->
-      <div class="geom-shape shape-diamond" tabindex="0">
+      <!-- 3. Languages (Cerchio) -->
+      <div class="geom-shape shape-star" tabindex="0">
         <button class="close-btn" aria-label="Chiudi">&times;</button>
         <div class="shape-inner">
           <h2 class="shape-title">Languages</h2>
           <div class="shape-content">
             <div class="cv-item">
-              <h3>Italian</h3>
-              <p>Madrelingua</p>
+              <h3>Italian 🇮🇹</h3>
+              <p>Mother tongue</p>
             </div>
             <div class="cv-item">
-              <h3>English</h3>
-              <p>Professional Working Proficiency (B2/C1)</p>
+              <h3>English 🇬🇧</h3>
+              <p>Professional Knowledge</p>
+            </div>
+            <div class="cv-item">
+              <h3>Spanish 🇪🇸</h3>
+              <p>Beginner</p>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- 4. Informatic Skills (Ellisse) -> Pistachio Green luminoso (#648f7b) -->
+      <!-- 4. Informatic Skills (Cerchio) -->
       <div class="geom-shape shape-ellipse" tabindex="0">
         <button class="close-btn" aria-label="Chiudi">&times;</button>
         <div class="shape-inner">
@@ -87,7 +104,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         </div>
       </div>
 
-      <!-- 5. Others (Esagono) -> Viola d'accento scuro (#4a4675) -->
+      <!-- 5. Others (Cerchio) -->
       <div class="geom-shape shape-hexagon" tabindex="0">
         <button class="close-btn" aria-label="Chiudi">&times;</button>
         <div class="shape-inner">
@@ -122,12 +139,13 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     shapes.forEach(shape => {
       const closeBtn = shape.querySelector('.close-btn');
 
-      shape.addEventListener('click', () => {
+      shape.addEventListener('click', (e) => {
         if (shape.classList.contains('active')) return;
 
         closeAllShapes();
         shape.classList.add('active');
         overlay?.classList.add('visible');
+        e.stopPropagation();
       });
 
       closeBtn?.addEventListener('click', (e) => {
@@ -152,9 +170,9 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   .cv-canvas-container {
     width: 100%;
     max-width: 1400px;
-    height: calc(100vh - 90px);
+    height: calc(100vh - 82px);
     margin: 0 auto;
-    padding: 0 20px 10px 20px;
+    padding: 20px;
     box-sizing: border-box;
     position: relative;
     display: flex;
@@ -162,17 +180,17 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     overflow: hidden;
   }
 
-  /* Titolo perfettamente al centro geometrico dello schermo */
+  /* Titolo al centro dello schermo */
   .page-title {
     position: absolute;
-    top: 50%;
+    top: 20%;
     left: 50%;
     transform: translate(-50%, -50%);
     font-size: 3.2rem;
     font-weight: 700;
     margin: 0;
     text-align: center;
-    z-index: 2;
+    z-index: 1;
     pointer-events: none;
   }
 
@@ -203,24 +221,27 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     position: relative;
     width: 100%;
     flex-grow: 1;
-    min-height: 550px;
+    min-height: 600px;
   }
 
-  /* Stile base per ogni geometria */
+  /* Stile base per ogni geometria (cerchi da 250px) */
   .geom-shape {
     position: absolute;
+    width: 250px;
+    height: 250px;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
     cursor: pointer;
+    border-radius: 50%;
     transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), 
                 width 0.4s ease, 
                 height 0.4s ease, 
                 border-radius 0.4s ease,
                 background-color 0.3s ease;
     box-sizing: border-box;
-    padding: 20px;
+    padding: 25px;
     overflow: hidden;
     z-index: 5;
   }
@@ -265,73 +286,211 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     line-height: 1;
   }
 
-  /* --- POSIZIONAMENTO E NUOVE TONALITÀ CORRELATE ALLA PALETTE #127 --- */
+  /* --- ANIMAZIONI DI OSCILLAZIONE --- */
+  @keyframes floatDynamic1 {
+    0% { transform: translate(0, 0); }
+    33% { transform: translate(-6px, -9px); }
+    66% { transform: translate(7px, 5px); }
+    100% { transform: translate(0, 0); }
+  }
+
+  @keyframes floatDynamic2 {
+    0% { transform: translate(0, 0); }
+    33% { transform: translate(9px, -5px); }
+    66% { transform: translate(-6px, 8px); }
+    100% { transform: translate(0, 0); }
+  }
+
+  /* Posizioni asimmetriche (cerchi da 250px) */
   .shape-circle {
-    width: 220px; height: 220px; border-radius: 50%;
-    background-color: var(--color-primary); color: #fcf6ef; /* Viola soft #66629c */
-    top: 4%; left: 4%; transform: rotate(-6deg);
+    background-color: var(--color-primary); color: #fcf6ef;
+    top: 1%; left: 8%;
+    animation: floatDynamic1 4.5s ease-in-out infinite;
     box-shadow: 0 12px 30px rgba(102, 98, 156, 0.25);
   }
-  .shape-circle:not(.active):hover { transform: rotate(0deg) scale(1.08); z-index: 10; }
+  .shape-circle:not(.active):hover { animation-play-state: paused; transform: scale(1.06); z-index: 10; }
 
   .shape-rect {
-    width: 250px; height: 150px; border-radius: 22px;
-    background-color: #d97a66; color: #fcf6ef; /* Toni del rosso/terracotta coordinato */
-    top: 4%; right: 4%; transform: rotate(7deg);
+    background-color: #d97a66; color: #fcf6ef;
+    top: 6%; right: 4%;
+    animation: floatDynamic2 5s ease-in-out infinite 0.7s;
     box-shadow: 0 12px 30px rgba(217, 122, 102, 0.25);
   }
-  .shape-rect:not(.active):hover { transform: rotate(1deg) scale(1.08); z-index: 10; }
+  .shape-rect:not(.active):hover { animation-play-state: paused; transform: scale(1.06); z-index: 10; }
 
-  .shape-diamond {
-    width: 240px; height: 240px; background-color: var(--color-secondary); color: #4a3b32; /* Cinnamon Buff #fdc57e */
-    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
-    bottom: 4%; left: 6%; padding: 50px; transform: rotate(12deg);
+  .shape-star {
+    background-color: var(--color-secondary); color: #fcf6ef;
+    bottom: 3%; left: 3%;
+    animation: floatDynamic1 5.5s ease-in-out infinite 1.4s;
     box-shadow: 0 12px 30px rgba(253, 197, 126, 0.25);
   }
-  .shape-diamond:not(.active):hover { transform: rotate(0deg) scale(1.08); z-index: 10; }
+  .shape-star:not(.active):hover { animation-play-state: paused; transform: scale(1.06); z-index: 10; }
 
   .shape-ellipse {
-    width: 260px; height: 145px; border-radius: 50% / 40%;
-    background-color: #648f7b; color: #fcf6ef; /* Pistachio Green meno scuro e luminoso */
-    bottom: 8%; left: 34%; transform: rotate(-4deg);
-    box-shadow: 0 12px 30px rgba(100, 143, 123, 0.25);
+    background-color: var(--color-secondary); color: #4a3b32;
+    bottom: 12%; left: 32%;
+    animation: floatDynamic2 4.8s ease-in-out infinite 0.3s;
+    box-shadow: 0 12px 30px rgba(253, 197, 126, 0.25);
   }
-  .shape-ellipse:not(.active):hover { transform: rotate(0deg) scale(1.08); z-index: 10; }
+  .shape-ellipse:not(.active):hover { animation-play-state: paused; transform: scale(1.06); z-index: 10; }
 
   .shape-hexagon {
-    width: 220px; height: 200px; background-color: #4a4675; color: #fcf6ef; /* Viola d'accento scuro */
-    clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
-    bottom: 4%; right: 6%; padding: 30px; transform: rotate(-5deg);
+    background-color: #4a4675; color: #fcf6ef;
+    bottom: 5%; right: 12%;
+    animation: floatDynamic1 5.2s ease-in-out infinite 1s;
     box-shadow: 0 12px 30px rgba(74, 70, 117, 0.25);
   }
-  .shape-hexagon:not(.active):hover { transform: rotate(0deg) scale(1.08); z-index: 10; }
+  .shape-hexagon:not(.active):hover { animation-play-state: paused; transform: scale(1.06); z-index: 10; }
 
-  /* --- STATO ATTIVO --- */
+  /* --- STATO ATTIVO GENERALE --- */
   .geom-shape.active {
     position: fixed !important;
-    top: 50% !important; left: 50% !important;
-    transform: translate(-50%, -50%) rotate(0deg) !important;
+    top: 50% !important; 
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    animation: none !important;
     z-index: 1000 !important;
     box-shadow: 0 30px 70px rgba(0, 0, 0, 0.4) !important;
-    justify-content: flex-start !important;
-    align-items: flex-start !important;
   }
 
-  .shape-circle.active { width: 650px !important; height: 650px !important; border-radius: 50% !important; padding: 90px 100px !important; }
-  .shape-rect.active { width: 720px !important; height: 460px !important; border-radius: 30px !important; padding: 60px 70px !important; }
-  .shape-diamond.active { width: 680px !important; height: 680px !important; padding: 110px 120px !important; background-color: #fef4e8 !important; color: #4a3b32 !important; }
-  .shape-ellipse.active { width: 740px !important; height: 480px !important; border-radius: 50% / 40% !important; padding: 70px 90px !important; }
-  .shape-hexagon.active { width: 660px !important; height: 660px !important; padding: 110px 120px !important; }
+  .geom-shape.active .shape-content {
+    opacity: 1 !important;
+    pointer-events: auto !important;
+  }
 
-  .geom-shape.active .shape-inner { justify-content: flex-start; align-items: flex-start; }
-  .geom-shape.active .shape-title { font-size: 2.1rem; border-bottom: 2px solid currentColor; width: 100%; padding-bottom: 12px; margin-bottom: 20px; }
-  .geom-shape.active .shape-content { opacity: 1; max-height: 380px; pointer-events: auto; }
-  .geom-shape.active .close-btn { display: block; }
+  .geom-shape.active .close-btn {
+    display: block !important;
+  }
+
+  /* --- STATO ATTIVO SPECIFICO PER IL CERCHIO (Working Experiences) --- */
+  .shape-circle.active { 
+    width: min(95vw, 95vh) !important; 
+    height: min(95vw, 95vh) !important; 
+    border-radius: 50% !important; 
+    padding: 60px 80px !important; 
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+  }
+
+  .shape-circle.active .shape-inner { 
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important; 
+    align-items: center !important; 
+    text-align: center !important;
+    width: 100% !important;
+    height: 100% !important;
+  }
+
+  .shape-circle.active .shape-title { 
+    font-size: 1.8rem; 
+    border-bottom: 2px solid var(--color-accent); 
+    width: 60%; 
+    margin: 0 auto 15px auto !important; 
+    padding-bottom: 8px; 
+    text-align: center;
+  }
+  
+  .shape-circle.active .highlight-letter { color: var(--color-accent); }
+  .shape-circle.active .highlight-word { color: var(--color-accent); }
+
+  .shape-circle.active .shape-content { 
+    max-height: none !important; 
+    overflow-y: visible !important;
+    width: 100% !important;
+  }
+
+  .shape-circle.active .cv-item { 
+    margin-bottom: 15px; 
+    text-align: center; 
+  }
+  .shape-circle.active .cv-item h3 { margin: 0 0 2px 0; font-size: 1.1rem; text-align: center; }
+  .shape-circle.active .cv-company { font-size: 0.82rem; opacity: 0.85; display: block; margin-bottom: 4px; text-align: center; }
+  
+  .shape-circle.active .cv-item p { 
+    font-size: 0.88rem; 
+    line-height: 1.4; 
+    margin: 0 auto; 
+    max-width: 650px;
+    text-align: justify; 
+    text-justify: inter-word;
+  }
+
+  /* Stati attivi per gli altri cerchi (Education, Languages, Skills, Others) */
+  .shape-rect.active,
+  .shape-star.active,
+  .shape-ellipse.active,
+  .shape-hexagon.active { 
+    width: min(90vw, 90vh) !important; 
+    height: min(90vw, 90vh) !important; 
+    border-radius: 50% !important; 
+    padding: 70px 90px !important; 
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    text-align: center !important;
+  }
+
+  /* Specifico per Languages con testo chiaro */
+  .shape-star.active { 
+    background-color: var(--color-secondary) !important; 
+    color: #fcf6ef !important; 
+  }
+  .shape-star.active .shape-inner { display: flex !important; flex-direction: column !important; justify-content: center !important; align-items: center !important; text-align: center !important; width: 100% !important; height: 100% !important; }
+  .shape-star.active .shape-title { font-size: 2rem; border-bottom: 2px solid #fcf6ef; width: 60%; margin: 0 auto 20px auto !important; padding-bottom: 10px; text-align: center !important; color: #fcf6ef !important; }
+  .shape-star.active .shape-content { max-height: none !important; overflow-y: visible !important; width: 100% !important; text-align: center !important; }
+  .shape-star.active .cv-item { margin-bottom: 18px; text-align: center !important; }
+  .shape-star.active .cv-item h3 { margin: 0 0 4px 0; font-size: 1.2rem; text-align: center !important; color: #fcf6ef !important; }
+  .shape-star.active .cv-item p { margin: 0; font-size: 1rem; text-align: center !important; color: #fcf6ef !important; opacity: 0.95; }
+
+  /* Adattamento interno per le altre schede circolari attive */
+  .shape-rect.active .shape-inner,
+  .shape-ellipse.active .shape-inner,
+  .shape-hexagon.active .shape-inner { 
+    justify-content: center !important; 
+    align-items: center !important; 
+    text-align: center !important; 
+  }
+  .shape-rect.active .shape-title,
+  .shape-ellipse.active .shape-title,
+  .shape-hexagon.active .shape-title { 
+    font-size: 1.8rem; 
+    border-bottom: 2px solid currentColor; 
+    width: 60%; 
+    margin: 0 auto 15px auto !important; 
+    padding-bottom: 8px; 
+    text-align: center !important; 
+  }
+  .shape-rect.active .shape-content,
+  .shape-ellipse.active .shape-content,
+  .shape-hexagon.active .shape-content { 
+    max-height: none !important; 
+    overflow-y: visible !important; 
+    text-align: center !important; 
+  }
+  .shape-rect.active .cv-item,
+  .shape-ellipse.active .cv-item,
+  .shape-hexagon.active .cv-item { 
+    text-align: center !important; 
+    margin-bottom: 15px; 
+  }
+  .shape-rect.active .cv-item h3,
+  .shape-ellipse.active .cv-item h3,
+  .shape-hexagon.active .cv-item h3 { 
+    text-align: center !important; 
+    margin: 0 0 4px 0; 
+  }
+  .shape-rect.active .cv-item p,
+  .shape-ellipse.active .cv-item p,
+  .shape-hexagon.active .cv-item p { 
+    text-align: center !important; 
+    margin: 0 auto; 
+    max-width: 600px; 
+  }
 
   .cv-item { margin-bottom: 20px; }
-  .cv-item h3 { margin: 0 0 4px 0; font-size: 1.2rem; }
-  .cv-company { font-size: 0.88rem; opacity: 0.85; display: block; margin-bottom: 6px; }
-  .cv-item p { font-size: 1rem; line-height: 1.5; margin: 0; }
 
   /* --- ADATTAMENTO MOBILE --- */
   @media (max-width: 768px) {
@@ -368,22 +527,19 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       transform: none !important;
       width: 220px !important; 
       height: 220px !important;
-      padding: 25px !important;
+      border-radius: 50% !important;
+      padding: 20px !important;
       margin: 0 auto;
+      animation: none !important;
     }
-
-    .shape-circle { border-radius: 50% !important; }
-    .shape-rect { width: 260px !important; height: 160px !important; border-radius: 20px !important; }
-    .shape-diamond { width: 240px !important; height: 240px !important; clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%) !important; padding: 50px 20px !important; }
-    .shape-ellipse { width: 260px !important; height: 160px !important; border-radius: 50% / 40% !important; }
-    .shape-hexagon { width: 230px !important; height: 210px !important; clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%) !important; padding: 40px 20px !important; }
 
     .geom-shape.active {
       width: 90vw !important;
       height: auto !important;
-      max-height: 80vh;
-      padding: 40px 25px !important;
-      border-radius: 24px !important;
+      max-height: 85vh;
+      overflow-y: auto !important;
+      padding: 30px 20px !important;
+      border-radius: 50% !important;
     }
   }
 </style>
