@@ -1,0 +1,125 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Cervino #1 - Portfolio">
+  <div class="project-detail-container">
+    
+    <a href="/portfolio" class="back-link">← Back to Portfolio</a>
+
+    <div class="project-header">
+      <h2 class="project-title">Cervino #1</h2>
+      <span class="project-year">2021</span>
+    </div>
+
+    <!-- Descrizione a tutta larghezza -->
+    <div class="project-text-full">
+      <p class="project-description">
+        I'm deeply attached to this big guy (the Matterhorn, il Cervino).<br>
+        I spent 3 summer seasons looking at it. I decided to give it to a friend that is completley in love
+        with it. It has been intresting to mix different kind of woods, adding details to the frame and trying
+        to follow a photograpy.
+      </p>
+    </div>
+
+    <!-- Due foto affiancate della stessa altezza senza zoom al passaggio del mouse -->
+    <div class="project-images-row">
+      <img src="/images/cervino1/IMG_1504.PNG" alt="cerv1" class="row-img" />
+      <img src="/images/cervino1/IMG_1506.jpeg" alt="cerv2" class="row-img" />
+    </div> <br>
+    <div class="project-images-row">
+      <img src="/images/cervino1/IMG_1511.jpeg" alt="cerv1" class="row-img" />
+      <img src="/images/cervino1/IMG_1513.jpg" alt="cerv2" class="row-img" />
+    </div>
+
+  </div>
+</BaseLayout>
+
+<style>
+  .project-detail-container {
+    width: 100%;
+    max-width: 950px;
+    margin: 0 auto;
+    padding: 50px 20px 80px 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .back-link {
+    text-decoration: none;
+    color: var(--color-primary);
+    font-weight: 600;
+    margin-bottom: 25px;
+    display: inline-block;
+    transition: color 0.2s ease;
+  }
+  .back-link:hover { 
+    color: var(--color-accent);
+  }
+
+  .project-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    border-bottom: 2px solid rgba(100, 143, 123, 0.3);
+    padding-bottom: 15px;
+    margin-bottom: 30px;
+  }
+
+  .project-title {
+    font-size: 2.4rem;
+    font-weight: 700;
+    color: var(--color-text);
+    margin: 0;
+  }
+
+  .project-year {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--color-accent);
+  }
+
+  /* Blocco descrizione a larghezza piena */
+  .project-text-full {
+    width: 100%;
+    margin-bottom: 40px;
+  }
+
+  .project-description {
+    font-size: 1.15rem;
+    line-height: 1.7;
+    color: var(--color-text);
+    margin: 0;
+  }
+
+  /* Griglia a due colonne per affiancare le immagini */
+  .project-images-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    width: 100%;
+  }
+
+  .row-img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 14px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    display: block;
+    
+  }
+
+  /* Su smartphone le due immagini si impilano una sotto l'altra */
+  @media (max-width: 768px) {
+    .project-images-row {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+
+    .row-img {
+      height: 300px;
+    }
+  }
+</style>

@@ -1,0 +1,160 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Obelix - Portfolio">
+  <div class="project-detail-container">
+    
+    <a href="/portfolio" class="back-link">← Back to Portfolio</a>
+
+    <div class="project-header">
+      <h2 class="project-title">Obelix</h2>
+      <span class="project-year">2021</span>
+    </div>
+
+    <!-- Layout principale più ricco e armonioso -->
+    <div class="project-content-grid">
+      
+      <!-- Colonna del testo -->
+      <div class="project-text-column">
+        <p class="project-description">
+          That wasn't a really inspired project. I was just tired of seeing this old church chair 
+          abandoned in the garage. When I started restoring it, I found it interesting, and when 
+          I went to make a more comfortable seat, I recovered an old piece of fabric that belonged 
+          to my mother. I liked how it matched the natural color of the wood. However, as I was 
+          placing the fabric on the cushion, I had a brainwave and said to myself: this is Obelix!
+        
+
+        </p>
+      </div>
+
+      <!-- Colonna delle immagini senza riquadro (2 immagini per riempire la pagina) -->
+      <div class="project-images-column">
+        <img src="/images/obelix/DSCF8420.jpg" alt="Obelix view 1" class="direct-img1" />
+        <img src="/images/obelix/DSCF8416.jpg" alt="Obelix view 2" class="direct-img2" />
+      </div>
+
+    </div>
+
+  </div>
+</BaseLayout>
+
+<style>
+  .project-detail-container {
+    width: 100%;
+    max-width: 1050px;
+    margin: 0 auto;
+    padding: 50px 20px 80px 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .back-link {
+    text-decoration: none;
+    color: var(--color-primary);
+    font-weight: 600;
+    margin-bottom: 25px;
+    display: inline-block;
+    transition: color 0.2s ease;
+  }
+  .back-link:hover { 
+    color: var(--color-accent);
+  }
+
+  .project-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    border-bottom: 2px solid rgba(100, 143, 123, 0.3);
+    padding-bottom: 15px;
+    margin-bottom: 40px;
+  }
+
+  .project-title {
+    font-size: 2.6rem;
+    font-weight: 700;
+    color: var(--color-text);
+    margin: 0;
+  }
+
+  .project-year {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--color-accent);
+  }
+
+  /* Griglia bilanciata tra testo e immagini */
+  .project-content-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: start;
+  }
+
+  .project-text-column {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    position: sticky;
+    top: 30px;
+  }
+
+  .project-description {
+    font-size: 1.15rem;
+    line-height: 1.7;
+    color: var(--color-text);
+    margin: 0;
+  }
+
+  .project-description-secondary {
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: var(--color-text);
+    opacity: 0.8;
+    margin: 0;
+  }
+
+  /* Colonna delle immagini senza riquadri */
+  .project-images-column {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .direct-img1 {
+    width: 100%;
+    height: auto;
+    max-height: 500px;
+    object-fit: cover;
+    border-radius: 14px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    display: block;
+    transition: transform 0.4s ease;
+  }
+  .direct-img2 {
+    width: 100%;
+    height: auto;
+    max-height: 650px;
+    object-fit: cover;
+    border-radius: 14px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    display: block;
+    transition: transform 0.4s ease;
+  }
+  .direct-img:hover {
+    transform: scale(1.02);
+  }
+
+  /* Responsive per dispositivi mobili */
+  @media (max-width: 768px) {
+    .project-content-grid {
+      grid-template-columns: 1fr;
+      gap: 35px;
+    }
+    
+    .project-text-column {
+      position: static;
+    }
+  }
+</style>

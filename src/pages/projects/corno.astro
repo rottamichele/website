@@ -1,0 +1,137 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Corno - Portfolio">
+  <div class="project-detail-container">
+    
+    <a href="/portfolio" class="back-link">← Back to Portfolio</a>
+
+    <div class="project-header">
+      <h2 class="project-title">Corno</h2>
+      <span class="project-year">2022</span>
+    </div>
+
+    <!-- Sezione Superiore: Testo a sinistra e immagine dedicata a destra -->
+    <div class="project-top-section">
+      <div class="project-text-box">
+        <p class="project-description">
+          Corno d'Aquilio. Mountain visible from home. Lovely for short solitary adventures 
+          when you need to breathe in the forest and look back at home with new perspective.
+        </p>
+      </div>
+      <div class="project-side-image-box">
+        <img src="/images/corno/IMG_2838.jpg" alt="corno" class="side-img" />
+      </div>
+    </div>
+
+
+  </div>
+</BaseLayout>
+
+<style>
+  .project-detail-container {
+    width: 100%;
+    max-width: 950px;
+    margin: 0 auto;
+    padding: 50px 20px 80px 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .back-link {
+    text-decoration: none;
+    color: var(--color-primary);
+    font-weight: 600;
+    margin-bottom: 25px;
+    display: inline-block;
+    transition: color 0.2s ease;
+  }
+  .back-link:hover { 
+    color: var(--color-accent);
+  }
+
+  .project-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    border-bottom: 2px solid rgba(100, 143, 123, 0.3);
+    padding-bottom: 15px;
+    margin-bottom: 35px;
+  }
+
+  .project-title {
+    font-size: 2.4rem;
+    font-weight: 700;
+    color: var(--color-text);
+    margin: 0;
+  }
+
+  .project-year {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--color-accent);
+  }
+
+  /* Sezione superiore: Testo e immagine affiancati */
+  .project-top-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+    margin-bottom: 40px;
+  }
+
+  .project-text-box {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .project-description {
+    font-size: 1.15rem;
+    line-height: 1.7;
+    color: var(--color-text);
+    margin: 0;
+  }
+
+  .side-img {
+    width: 100%;
+    height: 380px;
+    object-fit: cover;
+    border-radius: 14px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    display: block;
+  }
+
+  /* Sezione inferiore: Due immagini affiancate della stessa altezza */
+  .project-images-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    width: 100%;
+  }
+
+  .row-img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 14px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    display: block;
+  }
+
+  /* Adattamento per dispositivi mobili */
+  @media (max-width: 768px) {
+    .project-top-section,
+    .project-images-row {
+      grid-template-columns: 1fr;
+      gap: 25px;
+    }
+
+    .side-img,
+    .row-img {
+      height: 280px;
+    }
+  }
+</style>

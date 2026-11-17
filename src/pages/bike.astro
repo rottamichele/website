@@ -1,0 +1,187 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Bike - MR.">
+  <div class="construction-container">
+    
+    <a href="/portfolio" class="back-link">← Go to Portfolio</a>
+
+    <div class="construction-card">
+      <div class="icons-row">
+        <!-- Cartello lavori in corso in stile palette -->
+        <div class="icon-badge warning-sign" title="Work in progress">
+          <svg viewBox="0 0 64 64" width="54" height="54" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M32 6L58 54H6L32 6Z" fill="var(--color-accent)" stroke="var(--color-primary)" stroke-width="4" stroke-linejoin="round"/>
+            <path d="M32 23V37" stroke="var(--color-primary)" stroke-width="4.5" stroke-linecap="round"/>
+            <circle cx="32" cy="45" r="2.8" fill="var(--color-primary)"/>
+          </svg>
+        </div>
+
+        <!-- Missile / Razzo in decollo in stile palette -->
+        <div class="icon-badge rocket-sign" title="Launching soon">
+          <svg viewBox="0 0 64 64" width="54" height="54" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M32 8C24 18 22 30 22 40H42C42 30 40 18 32 8Z" fill="var(--color-primary)"/>
+            <path d="M22 33L13 43L22 41V33Z" fill="var(--color-secondary)"/>
+            <path d="M42 33L51 43L42 41V33Z" fill="var(--color-secondary)"/>
+            <circle cx="32" cy="26" r="5" fill="var(--color-bg)" stroke="var(--color-accent)" stroke-width="2.5"/>
+            <path d="M27 42L32 56L37 42H27Z" fill="var(--color-accent)"/>
+          </svg>
+        </div>
+      </div>
+
+      <h1 class="status-title">
+        Under <span class="accent-text">Construction</span>
+      </h1>
+
+      <div class="hazard-bar"></div>
+
+      <p class="status-subtitle">
+        Working on this spicy section! Online soooon
+      </p>
+
+      <a href="/" class="home-button">Back Home</a>
+    </div>
+
+  </div>
+</BaseLayout>
+
+<style>
+  .construction-container {
+    width: 100%;
+    max-width: 950px;
+    margin: 0 auto;
+    padding: 50px 20px 80px 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .back-link {
+    text-decoration: none;
+    color: var(--color-primary);
+    font-weight: 600;
+    margin-bottom: 30px;
+    display: inline-block;
+    transition: color 0.2s ease;
+  }
+  .back-link:hover {
+    color: var(--color-accent);
+  }
+
+  .construction-card {
+    background-color: rgba(100, 143, 123, 0.08);
+    border: 2px solid rgba(100, 143, 123, 0.3);
+    border-radius: 24px;
+    padding: 60px 30px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.05);
+  }
+
+  .icons-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 28px;
+    margin-bottom: 24px;
+  }
+
+  .icon-badge {
+    width: 88px;
+    height: 88px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-bg);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+    border: 2px solid rgba(100, 143, 123, 0.25);
+  }
+
+  .rocket-sign {
+    animation: floatRocket 2.6s ease-in-out infinite;
+  }
+
+  @keyframes floatRocket {
+    0%, 100% {
+      transform: translateY(0px) rotate(-8deg);
+    }
+    50% {
+      transform: translateY(-8px) rotate(-4deg);
+    }
+  }
+
+  .status-title {
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    margin: 0 0 18px 0;
+    letter-spacing: -0.5px;
+  }
+
+  .accent-text {
+    color: var(--color-accent);
+  }
+
+  /* Barra stilizzata "lavori in corso" con i colori della palette */
+  .hazard-bar {
+    width: 180px;
+    height: 8px;
+    border-radius: 999px;
+    margin-bottom: 24px;
+    background: repeating-linear-gradient(
+      -45deg,
+      var(--color-primary),
+      var(--color-primary) 10px,
+      var(--color-accent) 10px,
+      var(--color-accent) 20px
+    );
+  }
+
+  .status-subtitle {
+    font-size: 1.15rem;
+    line-height: 1.65;
+    color: var(--color-text);
+    max-width: 520px;
+    margin: 0 0 32px 0;
+  }
+
+  .status-subtitle strong {
+    color: var(--color-secondary);
+  }
+
+  .home-button {
+    display: inline-block;
+    padding: 12px 28px;
+    border-radius: 999px;
+    background-color: var(--color-primary);
+    color: var(--color-bg);
+    font-weight: 600;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: background-color 0.25s ease, transform 0.2s ease;
+  }
+
+  .home-button:hover {
+    background-color: var(--color-secondary);
+    transform: translateY(-2px);
+  }
+
+  @media (max-width: 600px) {
+    .construction-card {
+      padding: 45px 20px;
+    }
+
+    .status-title {
+      font-size: 2.1rem;
+    }
+
+    .icon-badge {
+      width: 74px;
+      height: 74px;
+    }
+  }
+</style>

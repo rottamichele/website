@@ -1,0 +1,156 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Baldo - Portfolio">
+  <div class="project-detail-container">
+    
+    <a href="/portfolio" class="back-link">← Back to Portfolio</a>
+
+    <div class="project-header">
+      <h2 class="project-title">Baldo</h2>
+      <span class="project-year">2022</span>
+    </div>
+
+    <!-- Sezione Superiore: Testo a sinistra e immagine dedicata a destra -->
+    <div class="project-top-section">
+      <div class="project-text-box">
+        <p class="project-description">
+          That was a very long journey. <br>
+          Inspired by one of my home mountain, Monte Baldo, I enjoyed composing its entire development 
+          from north to south using bark (mainly beech and pine bark). In jobs like this, you have time 
+          to relax, reflect, and nurture your creativity. These are moments of deep introspection 
+          that regenerate you.<br><br>
+          It's piece that remember me patience. <br>
+            So I give it to my mom.
+           
+        </p>
+      </div>
+      <div class="project-side-image-box">
+        <img src="/images/baldo/IMG_1551.jpg" alt="Baldo detail view" class="side-img" />
+      </div>
+    </div>
+
+    <!-- Sezione Inferiore: Due immagini una sopra l'altra a tutta larghezza -->
+    <div class="project-stacked-images">
+      <img src="/images/baldo/monte-baldo.jpg" alt="Monte Baldo view 1" class="full-width-img1" />
+      <img src="/images/baldo/IMG_1558.jpg" alt="Monte Baldo view 2" class="full-width-img2" />
+    </div>
+
+  </div>
+</BaseLayout>
+
+<style>
+  .project-detail-container {
+    width: 100%;
+    max-width: 950px;
+    margin: 0 auto;
+    padding: 50px 20px 80px 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .back-link {
+    text-decoration: none;
+    color: var(--color-primary);
+    font-weight: 600;
+    margin-bottom: 25px;
+    display: inline-block;
+    transition: color 0.2s ease;
+  }
+  .back-link:hover { 
+    color: var(--color-accent);
+  }
+
+  .project-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    border-bottom: 2px solid rgba(100, 143, 123, 0.3);
+    padding-bottom: 15px;
+    margin-bottom: 35px;
+  }
+
+  .project-title {
+    font-size: 2.4rem;
+    font-weight: 700;
+    color: var(--color-text);
+    margin: 0;
+  }
+
+  .project-year {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--color-accent);
+  }
+
+  /* Sezione superiore: Testo e immagine affiancati */
+  .project-top-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+    margin-bottom: 40px;
+  }
+
+  .project-text-box {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .project-description {
+    font-size: 1.15rem;
+    line-height: 1.7;
+    color: var(--color-text);
+    margin: 0;
+  }
+
+  .side-img {
+    width: 100%;
+    height: 380px;
+    object-fit: cover;
+    border-radius: 14px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    display: block;
+  }
+
+  /* Sezione inferiore: Immagini a tutta larghezza una sopra l'altra */
+  .project-stacked-images {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    width: 100%;
+  }
+
+  .full-width-img1 {
+    width: 100%;
+    height: auto;
+    max-height: 400px;
+    object-fit: contain;
+    border-radius: 14px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    display: block;
+  }
+  .full-width-img2 {
+    width: 100%;
+    height: auto;
+    max-height: 300px;
+    object-fit: cover;
+    border-radius: 14px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    display: block;
+  }
+
+  /* Adattamento per dispositivi mobili */
+  @media (max-width: 768px) {
+    .project-top-section {
+      grid-template-columns: 1fr;
+      gap: 25px;
+    }
+
+    .side-img {
+      height: 280px;
+    }
+  }
+</style>

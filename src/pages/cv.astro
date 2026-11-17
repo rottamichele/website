@@ -8,7 +8,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     <!-- Sfondo/Overlay per intercettare i click all'esterno -->
     <div class="canvas-overlay" id="canvasOverlay"></div>
 
-    <!-- Titolo Curriculum perfettamente al centro dello schermo -->
+    <!-- Titolo Curriculum al 20% dall'alto -->
     <h1 class="page-title">
       <span class="MR-word">Curriculum</span> <span class="dot-word">.</span>
     </h1>
@@ -16,8 +16,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     <!-- Canvas con forme geometriche -->
     <div class="shapes-canvas">
 
-      <!-- 1. Working Experiences (Cerchio) -->
-      <div class="geom-shape shape-circle" tabindex="0">
+      <!-- 1. Working Experiences (Primary) -->
+      <div class="geom-shape circle-1" tabindex="0">
         <button class="close-btn" aria-label="Chiudi">&times;</button>
         <div class="shape-inner">
           <h2 class="shape-title"><span class="highlight-letter">W</span>orking <span class="highlight-letter">E</span>xperiences</h2>
@@ -46,77 +46,150 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         </div>
       </div>
 
-      <!-- 2. Education (Cerchio) -->
-      <div class="geom-shape shape-rect" tabindex="0">
+      <!-- 2. Education (Accent) -->
+      <div class="geom-shape circle-2" tabindex="0">
         <button class="close-btn" aria-label="Chiudi">&times;</button>
         <div class="shape-inner">
-          <h2 class="shape-title">Education</h2>
+          <h2 class="shape-title"><span class="highlight-primary">E</span>ducation</h2>
           <div class="shape-content">
             <div class="cv-item">
-              <h3>M.Ss Automation and Control Engineer</h3>
-              <span class="cv-company">@ Politecnico di Milano | 2017 - 2020</span></div>
-            
-              <div class="cv-item">  
+              <h3>M.Sc Automation and Control Engineer</h3>
+              <span class="cv-company"><span class="cv-institution">@ Politecnico di Milano</span> | 2017 - 2020</span>
+            </div>
+            <div class="cv-item">  
               <h3>B.Sc Mechatronic Engineer</h3>
-              <span class="cv-company">@ Università degli Studi di Padova | 2014 - 2017</span></div></div>
+              <span class="cv-company"><span class="cv-institution">@ Università degli Studi di Padova</span> | 2014 - 2017</span>
+            </div>
+            <div class="cv-item">  
+              <h3>High School Diploma (Scientifico)</h3>
+              <span class="cv-company"><span class="cv-institution">@ Liceo Scientifico</span> | 2009 - 2014</span>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- 3. Languages (Cerchio) -->
-      <div class="geom-shape shape-star" tabindex="0">
+      <!-- 3. Languages (Secondary) -->
+      <div class="geom-shape circle-3" tabindex="0">
         <button class="close-btn" aria-label="Chiudi">&times;</button>
         <div class="shape-inner">
-          <h2 class="shape-title">Languages</h2>
+          <h2 class="shape-title"><span class="highlight-letter">L</span>anguages</h2>
           <div class="shape-content">
-            <div class="cv-item">
-              <h3>Italian 🇮🇹</h3>
-              <p>Mother tongue</p>
+            <div class="lang-row">
+              <span class="lang-name">Italiano 🇮🇹</span>
+              <span class="lang-desc">Mother tongue</span>
+              <div class="lang-bar"><div class="lang-progress p-100"></div></div>
             </div>
-            <div class="cv-item">
-              <h3>English 🇬🇧</h3>
-              <p>Professional Knowledge</p>
+            <div class="lang-row">
+              <span class="lang-name">English 🇬🇧</span>
+              <span class="lang-desc">Professional</span>
+              <div class="lang-bar"><div class="lang-progress p-80"></div></div>
             </div>
-            <div class="cv-item">
-              <h3>Spanish 🇪🇸</h3>
-              <p>Beginner</p>
+            <div class="lang-row">
+              <span class="lang-name">Spanish 🇪🇸</span>
+              <span class="lang-desc">Beginner</span>
+              <div class="lang-bar"><div class="lang-progress p-30"></div></div>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- 4. Informatic Skills (Cerchio) -->
-      <div class="geom-shape shape-ellipse" tabindex="0">
+      <!-- 4. Informatic Skills (Primary) -->
+      <div class="geom-shape circle-4" tabindex="0">
         <button class="close-btn" aria-label="Chiudi">&times;</button>
         <div class="shape-inner">
-          <h2 class="shape-title">Informatic Skills</h2>
+          <h2 class="shape-title"><span class="highlight-letter">I</span>nformatic <span class="highlight-letter">S</span>kills</h2>
           <div class="shape-content">
+            <div class="cv-item">
+              <h3>3D/2D Modelling</h3>
+              <p>SolidWorks, AutoCAD, BricsCAD, SketchUp</p>
+            </div>
             <div class="cv-item">
               <h3>Development & Code</h3>
-              <p>Astro, HTML/CSS, Python, Matlab, Scripting</p>
+              <p>Python, C, Astro, HTML/CSS, Git</p>
             </div>
             <div class="cv-item">
-              <h3>Engineering Tools</h3>
-              <p>CAD, Data Analysis Systems, Git, Productivity Software</p>
+              <h3>Computing Environment</h3>
+              <p>Matlab, Simulink, Ansys Mechanical</p>
+            </div>
+            <div class="cv-item">
+              <h3>Graphics</h3>
+              <p>InDesign, LaTex, RawTherapee</p>
+            </div>
+            <div class="cv-item">
+              <h3>Other</h3>
+              <p>MS Office, TeamCenter, SAP</p>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- 5. Others (Cerchio) -->
-      <div class="geom-shape shape-hexagon" tabindex="0">
+      <!-- 5. Hobbies & Interests (Secondary) -->
+      <div class="geom-shape circle-5" tabindex="0">
         <button class="close-btn" aria-label="Chiudi">&times;</button>
         <div class="shape-inner">
-          <h2 class="shape-title">Others</h2>
+          <h2 class="shape-title closed-only-title">
+            Hobby<br>&<br>Interests
+          </h2>
+
+          <h2 class="shape-title open-only-title">
+            <span class="highlight-letter">H</span>obby & <span class="highlight-letter">I</span>nterests
+          </h2>
+
           <div class="shape-content">
             <div class="cv-item">
-              <h3>Interests & Hobbies</h3>
-              <p>Attività outdoor tra lago e montagna, esplorazione tecnologica e progetti maker.</p>
+              <p class="hobbies-intro">In my free time I love to dedicate myself to:</p>
+              <ul class="hobbies-list-stacked">
+                <li>🚴 Cycling</li>
+                <li>🍺 Beer & Homebrewing</li>
+                <li>🌾 Agriculture</li>
+                <li>⛰️ Mountain</li>
+                <li>🎵 Music</li>
+                <li>🪵 Woodworking</li>
+              </ul>
+              <p class="hobbies-outro">
+                Curious to see what I create? Jump straight into my hands-on projects in the <a href="/portfolio" class="portfolio-link">Portfolio</a> section! 🚀
+              </p>
             </div>
-            <div class="cv-item">
-              <h3>Soft Skills</h3>
-              <p>Versatilità, attitudine al problem solving e visione d'insieme.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 6. Certifications & Projects (Accent) -->
+      <div class="geom-shape circle-6" tabindex="0">
+        <button class="close-btn" aria-label="Chiudi">&times;</button>
+        <div class="shape-inner">
+          <!-- Titolo da chiuso con colore Primary (viola) -->
+          <h2 class="shape-title closed-only-title circle-6-closed-title">
+            Certifications<br>&<br>Projects
+          </h2>
+
+          <div class="shape-content">
+            <div class="split-columns-container">
+              <!-- Colonna Sinistra: Certifications & Courses -->
+              <div class="split-column left-column">
+                <h3 class="column-subtitle"><span class="highlight-letter">C</span>ertifications & Courses</h3>
+                <div class="cv-item">
+                  <h4 class="item-title-primary">CAPM Certification</h4>
+                  <p>Certification currently being obtained</p>
+                </div>
+                <div class="cv-item">
+                  <h4 class="item-title-primary">BOSCH Hydraulic Course</h4>
+                  <p>Basic + Advanced Module</p>
+                </div>
+              </div>
+
+              <!-- Colonna Destra: Projects -->
+              <div class="split-column right-column">
+                <h3 class="column-subtitle"><span class="highlight-letter">P</span>rojects</h3>
+                <div class="cv-item">
+                  <h4 class="item-title-primary">Analysis and development of systems for the active monitoring of the health and wear of helicopters</h4>
+                  <p>Master Thesis in Machine Learning, Anomaly Detection, Predictive Maintenance, AI</p>
+                </div>
+                <div class="cv-item">
+                  <h4 class="item-title-primary">Automation of a storage warehouse</h4>
+                  <p>University project with ABB PLC</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -180,7 +253,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     overflow: hidden;
   }
 
-  /* Titolo al centro dello schermo */
+  /* Titolo al 20% dall'alto */
   .page-title {
     position: absolute;
     top: 20%;
@@ -224,7 +297,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     min-height: 600px;
   }
 
-  /* Stile base per ogni geometria (cerchi da 250px) */
+  /* Stile base per tutti i cerchi (250px uniformi) */
   .geom-shape {
     position: absolute;
     width: 250px;
@@ -241,7 +314,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                 border-radius 0.4s ease,
                 background-color 0.3s ease;
     box-sizing: border-box;
-    padding: 25px;
+    padding: 20px;
     overflow: hidden;
     z-index: 5;
   }
@@ -256,10 +329,19 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   }
 
   .shape-title {
-    font-size: 1.1rem;
+    font-size: 0.95rem;
     font-weight: 700;
     margin: 0;
-    line-height: 1.2;
+    line-height: 1.3;
+    padding: 0 5px;
+  }
+
+  /* Gestione visibilità titoli per cerchi a stato chiuso/aperto */
+  .geom-shape:not(.active) .open-only-title {
+    display: none !important;
+  }
+  .geom-shape.active .closed-only-title {
+    display: none !important;
   }
 
   .shape-content {
@@ -289,58 +371,78 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   /* --- ANIMAZIONI DI OSCILLAZIONE --- */
   @keyframes floatDynamic1 {
     0% { transform: translate(0, 0); }
-    33% { transform: translate(-6px, -9px); }
-    66% { transform: translate(7px, 5px); }
+    33% { transform: translate(-5px, -7px); }
+    66% { transform: translate(6px, 4px); }
     100% { transform: translate(0, 0); }
   }
 
   @keyframes floatDynamic2 {
     0% { transform: translate(0, 0); }
-    33% { transform: translate(9px, -5px); }
-    66% { transform: translate(-6px, 8px); }
+    33% { transform: translate(6px, -5px); }
+    66% { transform: translate(-5px, 6px); }
     100% { transform: translate(0, 0); }
   }
 
-  /* Posizioni asimmetriche (cerchi da 250px) */
-  .shape-circle {
+  /* --- DISTRIBUZIONE DEI TRE COLORI --- */
+  
+  /* 1. Working Experiences (Primary) */
+  .circle-1 {
     background-color: var(--color-primary); color: #fcf6ef;
-    top: 1%; left: 8%;
+    top: 3%; left: 8%;
     animation: floatDynamic1 4.5s ease-in-out infinite;
     box-shadow: 0 12px 30px rgba(102, 98, 156, 0.25);
   }
-  .shape-circle:not(.active):hover { animation-play-state: paused; transform: scale(1.06); z-index: 10; }
+  .circle-1:not(.active):hover { animation-play-state: paused; transform: scale(1.06); z-index: 10; }
 
-  .shape-rect {
-    background-color: #d97a66; color: #fcf6ef;
-    top: 6%; right: 4%;
+  /* 2. Education (Accent) */
+  .circle-2 {
+    background-color: var(--color-accent); color: #fcf6ef;
+    top: 6%; right: 13%;
     animation: floatDynamic2 5s ease-in-out infinite 0.7s;
+    box-shadow: 0 12px 30px rgba(253, 197, 126, 0.3);
+  }
+  .circle-2:not(.active):hover { animation-play-state: paused; transform: scale(1.06); z-index: 10; }
+
+  /* 3. Languages (Secondary) */
+  .circle-3 {
+    background-color: var(--color-secondary); color: #fcf6ef;
+    top: 55%; left: 3%;
+    animation: floatDynamic1 5.5s ease-in-out infinite 1.4s;
     box-shadow: 0 12px 30px rgba(217, 122, 102, 0.25);
   }
-  .shape-rect:not(.active):hover { animation-play-state: paused; transform: scale(1.06); z-index: 10; }
+  .circle-3:not(.active):hover { animation-play-state: paused; transform: scale(1.06); z-index: 10; }
 
-  .shape-star {
-    background-color: var(--color-secondary); color: #fcf6ef;
-    bottom: 3%; left: 3%;
-    animation: floatDynamic1 5.5s ease-in-out infinite 1.4s;
-    box-shadow: 0 12px 30px rgba(253, 197, 126, 0.25);
-  }
-  .shape-star:not(.active):hover { animation-play-state: paused; transform: scale(1.06); z-index: 10; }
-
-  .shape-ellipse {
-    background-color: var(--color-secondary); color: #4a3b32;
-    bottom: 12%; left: 32%;
+  /* 4. Informatic Skills (Primary) */
+  .circle-4 {
+    background-color: var(--color-primary); color: #fcf6ef;
+    top: 55%; left: 50%;
     animation: floatDynamic2 4.8s ease-in-out infinite 0.3s;
-    box-shadow: 0 12px 30px rgba(253, 197, 126, 0.25);
+    box-shadow: 0 12px 30px rgba(102, 98, 156, 0.25);
   }
-  .shape-ellipse:not(.active):hover { animation-play-state: paused; transform: scale(1.06); z-index: 10; }
+  .circle-4:not(.active):hover { animation-play-state: paused; transform: scale(1.06); z-index: 10; }
 
-  .shape-hexagon {
-    background-color: #4a4675; color: #fcf6ef;
-    bottom: 5%; right: 12%;
+  /* 5. Hobbies & Interests (Secondary) */
+  .circle-5 {
+    background-color: var(--color-secondary); color: #fcf6ef;
+    bottom: 8%; right: 6%;
     animation: floatDynamic1 5.2s ease-in-out infinite 1s;
-    box-shadow: 0 12px 30px rgba(74, 70, 117, 0.25);
+    box-shadow: 0 12px 30px rgba(217, 122, 102, 0.25);
   }
-  .shape-hexagon:not(.active):hover { animation-play-state: paused; transform: scale(1.06); z-index: 10; }
+  .circle-5:not(.active):hover { animation-play-state: paused; transform: scale(1.06); z-index: 10; }
+
+  /* 6. Certifications & Projects (Accent) */
+  .circle-6 {
+    background-color: var(--color-accent); color: #fcf6ef;
+    top: 35%; left: 28%;
+    animation: floatDynamic2 4.6s ease-in-out infinite 0.5s;
+    box-shadow: 0 12px 30px rgba(253, 197, 126, 0.3);
+  }
+  .circle-6:not(.active):hover { animation-play-state: paused; transform: scale(1.06); z-index: 10; }
+
+  /* Titolo specifico cerchio 6 da chiuso (Primary/Viola) */
+  .circle-6-closed-title {
+    color: var(--color-primary) !important;
+  }
 
   /* --- STATO ATTIVO GENERALE --- */
   .geom-shape.active {
@@ -362,8 +464,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     display: block !important;
   }
 
-  /* --- STATO ATTIVO SPECIFICO PER IL CERCHIO (Working Experiences) --- */
-  .shape-circle.active { 
+  /* --- STATO ATTIVO CERCHIO 1 (Working Experiences - Primary) --- */
+  .circle-1.active { 
     width: min(95vw, 95vh) !important; 
     height: min(95vw, 95vh) !important; 
     border-radius: 50% !important; 
@@ -371,134 +473,239 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     display: flex !important;
     justify-content: center !important;
     align-items: center !important;
+    background-color: var(--color-primary) !important;
+    color: #fcf6ef !important;
   }
+  .circle-1.active .shape-inner { display: flex !important; flex-direction: column !important; justify-content: center !important; align-items: center !important; text-align: center !important; width: 100% !important; height: 100% !important; }
+  .circle-1.active .shape-title { font-size: 1.8rem; border-bottom: 2px solid var(--color-accent); width: 60%; margin: 0 auto 15px auto !important; padding-bottom: 8px; text-align: center; }
+  .circle-1.active .highlight-letter { color: var(--color-accent); }
+  .circle-1.active .highlight-word { color: var(--color-accent); }
+  .circle-1.active .shape-content { max-height: none !important; overflow-y: visible !important; width: 100% !important; }
+  .circle-1.active .cv-item { margin-bottom: 15px; text-align: center; }
+  .circle-1.active .cv-item h3 { margin: 0 0 2px 0; font-size: 1.1rem; text-align: center; }
+  .circle-1.active .cv-company { font-size: 0.82rem; opacity: 0.85; display: block; margin-bottom: 4px; text-align: center; }
+  .circle-1.active .cv-item p { font-size: 0.88rem; line-height: 1.4; margin: 0 auto; max-width: 650px; text-align: justify; text-justify: inter-word; }
 
-  .shape-circle.active .shape-inner { 
-    display: flex !important;
-    flex-direction: column !important;
-    justify-content: center !important; 
-    align-items: center !important; 
-    text-align: center !important;
-    width: 100% !important;
-    height: 100% !important;
-  }
-
-  .shape-circle.active .shape-title { 
-    font-size: 1.8rem; 
-    border-bottom: 2px solid var(--color-accent); 
-    width: 60%; 
-    margin: 0 auto 15px auto !important; 
-    padding-bottom: 8px; 
-    text-align: center;
-  }
-  
-  .shape-circle.active .highlight-letter { color: var(--color-accent); }
-  .shape-circle.active .highlight-word { color: var(--color-accent); }
-
-  .shape-circle.active .shape-content { 
-    max-height: none !important; 
-    overflow-y: visible !important;
-    width: 100% !important;
-  }
-
-  .shape-circle.active .cv-item { 
-    margin-bottom: 15px; 
-    text-align: center; 
-  }
-  .shape-circle.active .cv-item h3 { margin: 0 0 2px 0; font-size: 1.1rem; text-align: center; }
-  .shape-circle.active .cv-company { font-size: 0.82rem; opacity: 0.85; display: block; margin-bottom: 4px; text-align: center; }
-  
-  .shape-circle.active .cv-item p { 
-    font-size: 0.88rem; 
-    line-height: 1.4; 
-    margin: 0 auto; 
-    max-width: 650px;
-    text-align: justify; 
-    text-justify: inter-word;
-  }
-
-  /* Stati attivi per gli altri cerchi (Education, Languages, Skills, Others) */
-  .shape-rect.active,
-  .shape-star.active,
-  .shape-ellipse.active,
-  .shape-hexagon.active { 
+  /* --- STATO ATTIVO CERCHIO 2 (Education - Accent -> Dettagli Primary) --- */
+  .circle-2.active { 
     width: min(90vw, 90vh) !important; 
     height: min(90vw, 90vh) !important; 
     border-radius: 50% !important; 
-    padding: 70px 90px !important; 
+    padding: 60px 80px !important; 
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    background-color: var(--color-accent) !important;
+    color: #fcf6ef !important;
+  }
+  .circle-2.active .shape-inner { display: flex !important; flex-direction: column !important; justify-content: center !important; align-items: center !important; width: 100% !important; height: 100% !important; }
+  .circle-2.active .shape-title { font-size: 1.8rem; border-bottom: 2px solid var(--color-primary); width: 60%; margin: 0 auto 20px auto !important; padding-bottom: 8px; text-align: center !important; color: #fcf6ef; }
+  .circle-2.active .highlight-primary { color: var(--color-primary); font-weight: 700; }
+  .circle-2.active .cv-institution { color: var(--color-primary); font-weight: 700; }
+  .circle-2.active .shape-content { max-height: none !important; overflow-y: visible !important; width: 100% !important; max-width: 600px; margin: 0 auto; text-align: left !important; color: #fcf6ef; }
+  .circle-2.active .cv-item { text-align: left !important; margin-bottom: 18px; }
+  .circle-2.active .cv-item h3 { text-align: left !important; margin: 0 0 2px 0; font-size: 1.15rem; color: #fcf6ef; }
+  .circle-2.active .cv-company { text-align: left !important; display: block; font-size: 0.85rem; opacity: 0.95; color: #fcf6ef; }
+
+  /* --- STATO ATTIVO CERCHIO 3 (Languages - Secondary/Verde -> Dettagli Accent) --- */
+  .circle-3.active { 
+    width: min(90vw, 90vh) !important; 
+    height: min(90vw, 90vh) !important; 
+    border-radius: 50% !important; 
+    padding: 60px 90px !important; 
     display: flex !important;
     flex-direction: column !important;
     justify-content: center !important;
     align-items: center !important;
     text-align: center !important;
-  }
-
-  /* Specifico per Languages con testo chiaro */
-  .shape-star.active { 
     background-color: var(--color-secondary) !important; 
     color: #fcf6ef !important; 
   }
-  .shape-star.active .shape-inner { display: flex !important; flex-direction: column !important; justify-content: center !important; align-items: center !important; text-align: center !important; width: 100% !important; height: 100% !important; }
-  .shape-star.active .shape-title { font-size: 2rem; border-bottom: 2px solid #fcf6ef; width: 60%; margin: 0 auto 20px auto !important; padding-bottom: 10px; text-align: center !important; color: #fcf6ef !important; }
-  .shape-star.active .shape-content { max-height: none !important; overflow-y: visible !important; width: 100% !important; text-align: center !important; }
-  .shape-star.active .cv-item { margin-bottom: 18px; text-align: center !important; }
-  .shape-star.active .cv-item h3 { margin: 0 0 4px 0; font-size: 1.2rem; text-align: center !important; color: #fcf6ef !important; }
-  .shape-star.active .cv-item p { margin: 0; font-size: 1rem; text-align: center !important; color: #fcf6ef !important; opacity: 0.95; }
+  .circle-3.active .shape-inner { display: flex !important; flex-direction: column !important; justify-content: center !important; align-items: center !important; text-align: center !important; width: 100% !important; height: 100% !important; }
+  .circle-3.active .shape-title { font-size: 2rem; border-bottom: 2px solid var(--color-accent); width: 60%; margin: 0 auto 35px auto !important; padding-bottom: 12px; text-align: center !important; color: #fcf6ef !important; }
+  .circle-3.active .highlight-letter { color: var(--color-accent); }
+  .circle-3.active .shape-content { max-height: none !important; overflow-y: visible !important; width: 100% !important; max-width: 580px; margin: 0 auto; }
+  .circle-3.active .lang-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px; width: 100%; gap: 20px; }
+  .circle-3.active .lang-row:last-child { margin-bottom: 0; }
+  .circle-3.active .lang-name { font-weight: 700; font-size: 1.15rem; text-align: left; flex: 1.2; color: #fcf6ef; }
+  .circle-3.active .lang-desc { font-size: 1rem; opacity: 0.95; text-align: left; flex: 1.5; color: #fcf6ef; }
+  .circle-3.active .lang-bar { flex: 1; height: 9px; background: rgba(252, 246, 239, 0.25); border-radius: 5px; overflow: hidden; }
+  .circle-3.active .lang-progress { height: 100%; background: var(--color-accent); border-radius: 5px; }
+  .circle-3.active .p-100 { width: 100%; }
+  .circle-3.active .p-80 { width: 75%; }
+  .circle-3.active .p-30 { width: 35%; }
 
-  /* Adattamento interno per le altre schede circolari attive */
-  .shape-rect.active .shape-inner,
-  .shape-ellipse.active .shape-inner,
-  .shape-hexagon.active .shape-inner { 
-    justify-content: center !important; 
-    align-items: center !important; 
-    text-align: center !important; 
+  /* --- STATO ATTIVO CERCHIO 4 (Informatic Skills - Primary) --- */
+  .circle-4.active { 
+    width: min(90vw, 90vh) !important; 
+    height: min(90vw, 90vh) !important; 
+    border-radius: 50% !important; 
+    padding: 60px 80px !important; 
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    background-color: var(--color-primary) !important; 
+    color: #fcf6ef !important; 
   }
-  .shape-rect.active .shape-title,
-  .shape-ellipse.active .shape-title,
-  .shape-hexagon.active .shape-title { 
-    font-size: 1.8rem; 
-    border-bottom: 2px solid currentColor; 
+  .circle-4.active .shape-inner { display: flex !important; flex-direction: column !important; justify-content: center !important; align-items: center !important; width: 100% !important; height: 100% !important; }
+  .circle-4.active .shape-title { font-size: 1.8rem; border-bottom: 2px solid var(--color-accent); width: 60%; margin: 0 auto 20px auto !important; padding-bottom: 8px; text-align: center !important; color: #fcf6ef !important; }
+  .circle-4.active .highlight-letter { color: var(--color-accent); }
+  .circle-4.active .shape-content { max-height: none !important; overflow-y: visible !important; width: 100% !important; max-width: 600px; margin: 0 auto; text-align: left !important; }
+  .circle-4.active .cv-item { text-align: left !important; margin-bottom: 15px; }
+  .circle-4.active .cv-item h3 { text-align: left !important; margin: 0 0 2px 0; font-size: 1.1rem; color: #fcf6ef; }
+  .circle-4.active .cv-item p { text-align: left !important; margin: 0; font-size: 0.9rem; opacity: 0.9; color: #fcf6ef; }
+
+  /* --- STATO ATTIVO CERCHIO 5 (Hobby & Interests - Secondary/Verde -> Dettagli Accent) --- */
+  .circle-5.active { 
+    width: min(90vw, 90vh) !important; 
+    height: min(90vw, 90vh) !important; 
+    border-radius: 50% !important; 
+    padding: 60px 80px !important; 
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    text-align: center !important;
+    background-color: var(--color-secondary) !important;
+    color: #fcf6ef !important;
+  }
+  .circle-5.active .shape-inner { justify-content: center !important; align-items: center !important; text-align: center !important; width: 100% !important; height: 100% !important; }
+  
+  .circle-5.active .open-only-title { 
+    font-size: 1.8rem !important; 
+    border-bottom: 2px solid var(--color-accent) !important; 
     width: 60%; 
-    margin: 0 auto 15px auto !important; 
+    margin: 0 auto 12px auto !important; 
     padding-bottom: 8px; 
     text-align: center !important; 
+    color: #fcf6ef;
   }
-  .shape-rect.active .shape-content,
-  .shape-ellipse.active .shape-content,
-  .shape-hexagon.active .shape-content { 
+  .circle-5.active .highlight-letter { color: var(--color-accent); }
+
+  .circle-5.active .shape-content { max-height: none !important; overflow-y: visible !important; text-align: center !important; width: 100% !important; max-width: 480px; margin: 0 auto; color: #fcf6ef; }
+  .circle-5.active .cv-item { text-align: center !important; margin-bottom: 0; }
+  .circle-5.active .hobbies-intro { margin: 0 0 10px 0; font-size: 0.92rem; opacity: 0.9; color: #fcf6ef; }
+  .circle-5.active .hobbies-list-stacked { list-style: none; padding: 0; margin: 0 0 14px 0; display: flex; flex-direction: column; gap: 6px; align-items: center; color: #fcf6ef; }
+  .circle-5.active .hobbies-list-stacked li { font-size: 0.95rem; font-weight: 500; }
+  .circle-5.active .hobbies-outro { margin: 0; font-size: 0.9rem; opacity: 0.95; line-height: 1.45; color: #fcf6ef; }
+  .circle-5.active .portfolio-link { color: var(--color-accent); font-weight: 700; text-decoration: underline; transition: opacity 0.2s ease; }
+  .circle-5.active .portfolio-link:hover { opacity: 0.8; }
+
+  /* --- STATO ATTIVO CERCHIO 6 (Certifications & Projects - Accent) --- */
+  .circle-6.active { 
+    width: min(95vw, 95vh) !important; 
+    height: min(95vw, 95vh) !important; 
+    border-radius: 50% !important; 
+    padding: 60px 80px !important; 
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    background-color: var(--color-accent) !important;
+    color: #fcf6ef !important;
+  }
+  .circle-6.active .shape-inner {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    width: 100% !important;
+    height: 100% !important;
+  }
+  .circle-6.active .shape-content { 
     max-height: none !important; 
     overflow-y: visible !important; 
-    text-align: center !important; 
+    width: 100% !important;
+    max-width: 780px;
+    margin: 0 auto;
+    color: #fcf6ef;
   }
-  .shape-rect.active .cv-item,
-  .shape-ellipse.active .cv-item,
-  .shape-hexagon.active .cv-item { 
-    text-align: center !important; 
-    margin-bottom: 15px; 
+
+  /* Titoli delle due sezioni (chiari) */
+  .circle-6.active .split-column .column-subtitle {
+    color: #fcf6ef !important;
+    font-size: 1.35rem;
+    font-weight: 700;
+    margin: 0 0 20px 0;
+    border-bottom: 2px solid var(--color-primary);
+    padding-bottom: 6px;
   }
-  .shape-rect.active .cv-item h3,
-  .shape-ellipse.active .cv-item h3,
-  .shape-hexagon.active .cv-item h3 { 
-    text-align: center !important; 
-    margin: 0 0 4px 0; 
+  .circle-6.active .split-column .highlight-letter {
+    color: #fcf6ef !important;
   }
-  .shape-rect.active .cv-item p,
-  .shape-ellipse.active .cv-item p,
-  .shape-hexagon.active .cv-item p { 
-    text-align: center !important; 
-    margin: 0 auto; 
-    max-width: 600px; 
+
+  /* Titoli dei singoli elementi (CAPM, Bosch, Tesi, Warehouse) in viola primary */
+  .circle-6.active .split-column .item-title-primary {
+    color: var(--color-primary) !important;
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin: 0 0 4px 0;
+  }
+
+  .circle-6.active .split-column p {
+    color: #fcf6ef !important;
+    opacity: 0.95;
+  }
+
+  .circle-6.active .left-column {
+    border-right: 2px solid var(--color-primary) !important;
+  }
+
+  .split-columns-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+    align-items: start; 
+  }
+  .split-column {
+    padding: 0 35px;
+    box-sizing: border-box;
+  }
+  .left-column {
+    border-right: 2px solid var(--color-accent);
+    text-align: right;
+  }
+  .right-column {
+    text-align: left;
+  }
+  .split-column .column-subtitle {
+    font-size: 1.35rem;
+    font-weight: 700;
+    margin: 0 0 20px 0;
+    color: #fcf6ef;
+  }
+  .split-column .highlight-letter {
+    color: var(--color-accent);
+  }
+  .split-column .cv-item {
+    margin-bottom: 18px;
+  }
+  .split-column h4 {
+    margin: 0 0 4px 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #fcf6ef;
+  }
+  .split-column p {
+    margin: 0;
+    font-size: 0.9rem;
+    opacity: 0.88;
+    line-height: 1.35;
+    color: #fcf6ef;
   }
 
   .cv-item { margin-bottom: 20px; }
 
-  /* --- ADATTAMENTO MOBILE --- */
+/* --- ADATTAMENTO MOBILE --- */
   @media (max-width: 768px) {
     .cv-canvas-container {
       height: auto !important;
       min-height: 100vh;
-      overflow: visible !important;
-      padding: 20px 15px 60px 15px;
+      overflow-x: hidden !important;
+      overflow-y: visible !important;
+      padding: 20px 15px 80px 15px;
     }
 
     .page-title {
@@ -515,31 +722,144 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 25px;
+      gap: 35px;
     }
 
+    /* Cerchi chiusi con movimento fluido abilitato */
     .geom-shape {
       position: relative !important;
       top: auto !important; 
       left: auto !important; 
       right: auto !important; 
       bottom: auto !important;
-      transform: none !important;
-      width: 220px !important; 
-      height: 220px !important;
+      width: 230px !important; 
+      height: 230px !important;
       border-radius: 50% !important;
       padding: 20px !important;
       margin: 0 auto;
+    }
+
+    /* Animazioni di oscillazione attiva da chiusi */
+    .circle-1 { animation: floatDynamic1 4.2s ease-in-out infinite !important; }
+    .circle-2 { animation: floatDynamic2 4.8s ease-in-out infinite 0.5s !important; }
+    .circle-3 { animation: floatDynamic1 5.0s ease-in-out infinite 1.2s !important; }
+    .circle-4 { animation: floatDynamic2 4.5s ease-in-out infinite 0.3s !important; }
+    .circle-5 { animation: floatDynamic1 5.3s ease-in-out infinite 0.8s !important; }
+    .circle-6 { animation: floatDynamic2 4.6s ease-in-out infinite 0.6s !important; }
+
+    /* CERCHI APERTI: dimensione standard base (137.5vw) */
+    .geom-shape.active {
+      width: 137.5vw !important;
+      height: 137.5vw !important;
+      max-height: 88vh !important;
+      overflow-y: auto !important;
+      padding: 85px 65px !important; 
+      border-radius: 50% !important;
+      transform: translate(-50%, -50%) !important;
       animation: none !important;
     }
 
-    .geom-shape.active {
-      width: 90vw !important;
-      height: auto !important;
-      max-height: 85vh;
-      overflow-y: auto !important;
-      padding: 30px 20px !important;
-      border-radius: 50% !important;
+    /* WORKING EXPERIENCES: aumentato di un ulteriore 10% (166vw) */
+    .circle-1.active {
+      width: 166vw !important;
+      height: 166vw !important;
+      padding: 105px 85px !important;
+    }
+    .circle-1.active .shape-content {
+      max-width: 70% !important;
+      margin: 0 auto !important;
+      text-align: center !important;
+    }
+    .circle-1.active .cv-item p {
+      text-align: center !important;
+      font-size: 0.83rem !important;
+      line-height: 1.35 !important;
+    }
+
+    .geom-shape.active .shape-inner {
+      justify-content: flex-start !important;
+      padding-top: 15px;
+    }
+
+    /* Informatic Skills allineato al centro */
+    .circle-4.active .shape-content,
+    .circle-4.active .cv-item,
+    .circle-4.active .cv-item h3,
+    .circle-4.active .cv-item p {
+      text-align: center !important;
+    }
+
+    /* EDUCATION: allineamento a sinistra ma con margini protetti dal bordo */
+    .circle-2.active {
+      padding: 85px 95px !important;
+    }
+    .circle-2.active .shape-content {
+      max-width: 72% !important;
+      margin: 0 auto !important;
+    }
+    .circle-2.active .shape-content,
+    .circle-2.active .cv-item,
+    .circle-2.active .cv-item h3,
+    .circle-2.active .cv-company {
+      text-align: left !important;
+    }
+
+    /* HOBBIES & INTERESTS: frase finale ristretta */
+    .circle-5.active .shape-content {
+      max-width: 75% !important;
+      margin: 0 auto !important;
+      text-align: center !important;
+    }
+    .circle-5.active .hobbies-outro {
+      font-size: 0.82rem !important;
+      line-height: 1.35 !important;
+    }
+
+    .circle-3.active .lang-row {
+      flex-direction: column;
+      gap: 8px;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .circle-3.active .lang-name, 
+    .circle-3.active .lang-desc { text-align: center; }
+    .circle-3.active .lang-bar { width: 80%; margin: 0 auto; }
+
+    /* CERTIFICATIONS & PROJECTS: disposizione verticale pulita senza linee extra */
+    .circle-6.active {
+      padding: 95px 75px !important;
+    }
+    .circle-6.active .shape-content {
+      max-width: 78% !important;
+      margin: 0 auto !important;
+    }
+    .split-columns-container {
+      grid-template-columns: 1fr !important;
+      gap: 28px;
+    }
+    .circle-6.active .left-column,
+    .left-column {
+      border-right: none !important;
+      border-bottom: none !important;
+      padding: 0 !important;
+      margin-bottom: 0 !important;
+      text-align: center !important;
+    }
+    .right-column {
+      padding: 0 !important;
+      text-align: center !important;
+    }
+    .circle-6.active .split-column .column-subtitle {
+      font-size: 1.15rem !important;
+      margin-bottom: 14px !important;
+      text-align: center !important;
+      border-bottom: 2px solid var(--color-primary) !important;
+      padding-bottom: 6px !important;
+    }
+    .circle-6.active .split-column .item-title-primary {
+      font-size: 0.98rem !important;
+    }
+    .circle-6.active .split-column p {
+      font-size: 0.82rem !important;
     }
   }
-</style>
